@@ -20,20 +20,7 @@
 /**
  * The following partition always produces a 9-to-1 split yielding a run-time of 
  * O(nlog(n)). Nodes represent subproblem sizes and per level cost on the right.
- * 
- * 							n ----------------------------------->   (cn)
- * 					     *      *
- * 				 (1/10)n         (9/10)n ------------------------>   (cn)
- *              *       *       *       *
- *          (1/100)n (9/100)n (9/100)n (81/100)n ---------------->   (cn)
- *          *      * *      * *      * *       *
- *                                (81/1000)n (729/1000)n -------->   (cn)
- *                                *        *   *        *
- * 								*   *     * * * *      * * ------>  (<= cn)
- *                                                         *
- *                                                          1 --->  (<= cn)
- *                                                                 ----------
- *                                                                 O(nlog(n))
+ *
  * Recurrence -> T(n) = T(9n/10) + T(n/10) + (cn)
  */
 
